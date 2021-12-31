@@ -1,0 +1,227 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.wall {
+  background-image: url(../img/icon-wall.jpg);
+  overflow: hidden;
+  background-color: #121936;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  line-height: 0;
+}
+
+.result {
+  position: absolute;
+  height: 320px;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  margin-top: -160px;
+  text-align: center;
+  padding: 10px;
+  display: none;
+}
+
+.winnerRecords {
+  position: absolute;
+  height: 320px;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  margin-top: -160px;
+  text-align: center;
+  padding: 10px;
+  display: none;
+  overflow-y: auto;
+}
+
+.winnerRecords::-webkit-scrollbar {
+  width: 6px;
+  height: 100%;
+}
+.winnerRecords::-webkit-scrollbar-thumb {
+  width: 4px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 3px;
+}
+.winnerRecords::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.winnerRecord {
+  display: block;
+  font-size: 25px;
+  width: 100%;
+  background: #fff;
+  line-height: 30px;
+  color: #000;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  padding: 10px 10px;
+  margin: 10px auto 10px auto;
+  text-align: left;
+}
+
+.result span {
+  display: inline-block;
+  font-size: 25px;
+  width: 150px;
+  background: #fff;
+  line-height: 30px;
+  color: #000;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  padding: 10px 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  border: none;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+.pure-button {
+  display: inline-block;
+  zoom: 1;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.pure-button {
+  font-family: inherit;
+  font-size: 100%;
+  padding: 0.5em 1em;
+  color: #444;
+  color: rgba(0, 0, 0, 0.8);
+  border: 0 rgba(0, 0, 0, 0);
+  background-color: #e6e6e6;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.pure-button:focus {
+  outline: 0;
+}
+
+.pure-button-hover,
+.pure-button:hover,
+.pure-button:focus {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000', GradientType=0);
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(transparent),
+    color-stop(40%, rgba(0, 0, 0, 0.05)),
+    to(rgba(0, 0, 0, 0.1))
+  );
+  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05) 0, rgba(0, 0, 0, 0.1));
+  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+}
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+  background: rgb(28, 184, 65);
+}
+
+.button-error {
+  background: rgb(202, 60, 60);
+}
+
+.button-warning {
+  background: rgb(223, 117, 20);
+}
+
+.button-secondary {
+  background: rgb(66, 184, 221);
+}
+
+.tools {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+.tools .pure-button {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 0;
+  text-align: center;
+  width: 100px;
+}
+
+.mask {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
+#main {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.result-btn {
+  position: absolute;
+  margin: 20px 25px 0 0;
+  right: 0px;
+}
+
+.member {
+  color: #fff;
+}
+
+.winner {
+  color: #ff0;
+}
