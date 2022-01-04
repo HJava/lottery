@@ -123,6 +123,23 @@ function createWinnerRecordsHTML() {
   }, '');
 }
 
+function hideWinnersMask() {
+  document.querySelector('#result').style.display = 'none';
+  document.querySelector('#main').classList.remove('mask');
+}
+
+function showWinnersMask() {
+  document.querySelector('#main').classList.add('mask');
+}
+
+function hideWinnerRecords() {
+  let $winnerRecords = document.querySelector('#winnerRecords');
+  if ($winnerRecords.style.display !== ' none') {
+    $winnerRecords.innerHTML = '';
+    $winnerRecords.style.display = 'none';
+  }
+}
+
 function lottery(number) {
   let list = document.getElementById('memberCanvas').getElementsByTagName('a');
   let color = 'yellow';
@@ -154,14 +171,20 @@ function initVue() {
     methods: {
       reset: function () {
         if (confirm('确定要重置么？所有之前的抽奖历史将被清除！')) {
+          hideWinnerRecords();
+          hideWinnersMask();
+
           clearStorage();
           loadStorage();
           updateCanvasInnerHTML();
+          reloadTagCanvas();
         }
       },
+
       loadStorageInfo() {
         loadStorage();
         updateCanvasInnerHTML();
+        reloadTagCanvas();
       },
       showWinnerRecords() {
         let $winnerRecords = document.querySelector('#winnerRecords');
@@ -170,21 +193,13 @@ function initVue() {
           $winnerRecords.style.display = 'block';
         }
       },
-      hideWinnerRecords() {
-        let $winnerRecords = document.querySelector('#winnerRecords');
-        if ($winnerRecords.style.display !== ' none') {
-          $winnerRecords.innerHTML = '';
-          $winnerRecords.style.display = 'none';
-        }
-      },
       onClick: function (num) {
-        document.querySelector('#result').style.display = 'none';
-        document.querySelector('#main').classList.remove('mask');
+        hideWinnersMask();
 
         this.selected = num;
       },
       toggle: function () {
-        this.hideWinnerRecords();
+        hideWinnerRecords();
         if (this.running) {
           let $result = document.querySelector('#result');
 
@@ -200,12 +215,11 @@ function initVue() {
           $result.innerHTML = createWinnerHTML(winners);
           updateCanvasInnerHTML();
           reloadTagCanvas();
-          setTimeout(function () {
-            document.querySelector('#main').classList.add('mask');
+          setTimeout(() => {
+            showWinnersMask();
           }, 300);
         } else {
-          document.querySelector('#result').style.display = 'none';
-          document.querySelector('#main').classList.remove('mask');
+          hideWinnersMask();
           speedDown();
         }
         this.running = !this.running;
