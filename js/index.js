@@ -1,7 +1,7 @@
 const KEY = '_lottery_winner';
 const RECORD_KEY = '_lottery_winner_record';
-const winnerMap = new Map();
-const winRecords = [];
+let winnerMap = new Map();
+let winRecords = [];
 
 function loadStorage() {
   try {
@@ -15,7 +15,9 @@ function loadStorage() {
       winnerMap.clear();
       winRecords = [];
     }
-  } catch (e) {}
+  } catch (e) {
+    console.error('读取数据异常', e);
+  }
 }
 
 function clearStorage() {
@@ -180,6 +182,9 @@ function initVue() {
       },
 
       loadStorageInfo() {
+        //   if(confirm('是否需要读取之前的缓存记录?')) {
+
+        //   }
         loadStorage();
         updateCanvasInnerHTML();
         reloadTagCanvas();
