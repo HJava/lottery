@@ -8,6 +8,7 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
     <title>年会抽奖小程序</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="pure.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
@@ -24,8 +25,9 @@
         <div id="winnerRecords" class="winnerRecords" @click="hideWinnerRecords">
         </div>
         <div id="tools" class="tools">
-            <button v-for="btn in btns" @click="onClick(btn.value)" class="pure-button"
-                :class="{ 'button-error': selected == btn.value}">{{btn.name}}</button>
+            <!-- <button v-for="btn in btns" @click="onClick(btn.value)" class="pure-button"
+                :class="{ 'button-error': selected == btn.value}">{{btn.name}}</button> -->
+            <input type="number" name="winnerNumber" id="winnerNumber" placeholder="3" v-model="selected" />
             <button class="pure-button" @click="toggle" :class="{'button-secondary': !running,
                'button-success': running}">{{running?'停!':'开始'}}</button>
             <button class="pure-button button-warning" @click="reset">清空抽奖记录</button>

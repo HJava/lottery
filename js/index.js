@@ -141,8 +141,6 @@ function hideWinnerRecords() {
 }
 
 function lottery(number) {
-  let list = document.getElementById('memberCanvas').getElementsByTagName('a');
-  let color = 'yellow';
   let notSelectedMembers = allMembers.filter(member => !isWinner(member));
   let newWinners = getRandomMembers(notSelectedMembers, number);
 
